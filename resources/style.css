@@ -1,0 +1,4 @@
+#buyTicketForm {
+    display: flex;
+    flex-direction: column;
+}
