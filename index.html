@@ -13,17 +13,20 @@
         <div id="buyTicketContainer">
             <h2>Купить билет</h2>
             <form id="buyTicketForm" action="#" method="post">
+                <h3>Стоимость билета <span id="price">1000</span></h3>
                 <label for="ticketType">Тип билета</label>
                 <select name="ticketType" id="ticketType">
                     <option value="1">Ежемесячный</option>
                     <option value="2">Ежеквартальный</option>
                     <option value="3">Ежегодный</option>
                 </select>
-                <label for="ticketCount">Количество билетов</label>
-                <input type="number" name="ticketCount" id="ticketCount" placeholder="Количество билетов" required>
                 <input type="submit" value="Купить">
             </form>
         </div>
     </main>
+
+    <script src="resources/variables.js"></script>
+    <script src="resources/battery.js"></script>
+    <script src="resources/script.js"></script>
 </body>
 </html>
