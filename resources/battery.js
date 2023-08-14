@@ -3,36 +3,26 @@ const logBatteryStatus = (battery) => {
     console.log("Battery level: " + battery.level);
 }
 
+const updatePriceInDomFromBattery = (price, battery) => {
+    logBatteryStatus(battery);
+    updatePriceInDom(getPriceFromBatteryLevel({
+        price,
+        batteryLevel: battery.level,
+        isBatteryCharging: battery.charging
+    }));
+}
+
 const initBatteryWork = (price) => {
     if (navigator.getBattery) {
         navigator.getBattery().then((battery) => {
-            logBatteryStatus(battery);
-            updatePriceInDom(getPriceFromBatteryLevel({
-                price,
-                batteryLevel: battery.level,
-                isBatteryCharging: battery.charging
-            }));
+            updatePriceInDomFromBattery(price, battery);
 
             battery.addEventListener("chargingchange", () => {
-                logBatteryStatus(battery);
-                if (battery.charging) {
-                    updatePriceInDom(price);
-                } else {
-                    updatePriceInDom(getPriceFromBatteryLevel({
-                        price,
-                        batteryLevel: battery.level,
-                        isBatteryCharging: battery.charging
-                    }));
-                }
+                updatePriceInDomFromBattery(price, battery);
             });
 
             battery.addEventListener("levelchange", () => {
-                logBatteryStatus(battery);
-                updatePriceInDom(getPriceFromBatteryLevel({
-                    price,
-                    batteryLevel: battery.level,
-                    isBatteryCharging: battery.charging
-                }));
+                updatePriceInDomFromBattery(price, battery);
             });
         });
     } else {
@@ -40,7 +30,7 @@ const initBatteryWork = (price) => {
     }
 }
 
-const getPriceFromBatteryLevel = ({price, batteryLevel, isBatteryCharging }) => {
+const getPriceFromBatteryLevel = ({price, batteryLevel, isBatteryCharging}) => {
     const MIN_LEVEL = 0.1;
     const K = 10;
     let outPrice = price;
