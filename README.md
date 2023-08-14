@@ -7,6 +7,8 @@
 
 https://docs.google.com/presentation/d/10rgKpLIkD5DIg2lSysfQNCV2kwqqV7_1U3rvcuNgEuU/edit?usp=sharing
 
+Основной пример презентации доступен по адресу - https://m0rg0t.github.io/unusual_web_api_and_examples/
+
 ## Battery status API
 
 https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
