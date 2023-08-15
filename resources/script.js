@@ -1,3 +1,9 @@
+document.getElementById("buyButton").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    shareTicket("https://m0rg0t.github.io/unusual_web_api_and_examples/");
+});
+
 initBatteryWork(DEFAULT_TICKET_PRICE);
 initPageVisibility((isVisible) => {
     if (PREVIOUS_PAGE_VISIBILITY_STATE === null) {
@@ -11,8 +17,5 @@ initPageVisibility((isVisible) => {
     PREVIOUS_PAGE_VISIBILITY_STATE = isVisible;
 });
 
-document.getElementById("buyButton").addEventListener("click", (e) => {
-    e.preventDefault();
+initUpdateHowMuchPeoplesWatchingSubscription();
 
-    shareTicket("https://m0rg0t.github.io/unusual_web_api_and_examples/");
-});

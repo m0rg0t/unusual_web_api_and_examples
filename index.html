@@ -11,15 +11,16 @@
     </nav>
     <main>
         <div id="buyTicketContainer">
-            <h2>Купить билет</h2>
+            <h2>Купить пивную подписку</h2>
             <form id="buyTicketForm" action="#" method="post">
-                <h3>Стоимость билета <span id="price">1000</span></h3>
-                <label for="ticketType">Тип билета</label>
+                <h3>Стоимость пивной подписки <span id="price">1000</span> рублей</h3>
+                <label for="ticketType">Тип подписки</label>
                 <select name="ticketType" id="ticketType">
-                    <option value="1">Ежемесячный</option>
-                    <option value="2">Ежеквартальный</option>
-                    <option value="3">Ежегодный</option>
+                    <option value="1">Ежемесячная</option>
+                    <option value="2">Ежеквартальная</option>
+                    <option value="3">Ежегодная</option>
                 </select>
+                <h3>Уже <span id="peoplesWatching">1</span> хотят купить подписку</h3>
                 <input id="buyButton" type="submit" value="Купить">
             </form>
         </div>
@@ -29,6 +30,7 @@
     <script src="resources/battery.js"></script>
     <script src="resources/sharing.js"></script>
     <script src="resources/page-visibility.js"></script>
+    <script src="resources/vibrations.js"></script>
     <script src="resources/script.js"></script>
 </body>
 </html>
