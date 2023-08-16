@@ -9,9 +9,9 @@ const shareTicket = async (ticketUrl) => {
         try {
             await navigator.share(shareData);
         } catch (err) {
-            console.log(`Error: ${err}`);
+            debugConsole(`Error: ${err}`);
         }
     } else {
-        console.log(`Your browser doesn't support the Web Share API.`);
+        debugConsole(`Your browser doesn't support the Web Share API.`);
     }
 }

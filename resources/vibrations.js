@@ -5,10 +5,10 @@ const initUpdateHowMuchPeoplesWatchingSubscription = () => {
 
     const vibrate = () => {
         if (window.navigator.vibrate) {
-            console.log('bzzzzzzz');
+            debugConsole('bzzzzzzz');
             window.navigator.vibrate([100, 100, 100]);
         } else {
-            console.log("vibrate none available in your browser");
+            debugConsole("vibrate none available in your browser");
         }
     }
 

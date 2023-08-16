@@ -1,6 +1,6 @@
 const logBatteryStatus = (battery) => {
-    console.log("Battery charging: " + battery.charging);
-    console.log("Battery level: " + battery.level);
+    debugConsole("Battery charging: " + battery.charging);
+    debugConsole("Battery level: " + battery.level);
 }
 
 const updatePriceInDomFromBattery = (price, battery) => {
@@ -26,7 +26,7 @@ const initBatteryWork = (price) => {
             });
         });
     } else {
-        console.log("Battery status API unavailable");
+        debugConsole("Battery status API unavailable");
     }
 }
 
