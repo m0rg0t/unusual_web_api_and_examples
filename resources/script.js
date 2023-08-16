@@ -16,6 +16,7 @@ initPageVisibility((isVisible) => {
 
     PREVIOUS_PAGE_VISIBILITY_STATE = isVisible;
 });
+initWakeLock();
 
 initUpdateHowMuchPeoplesWatchingSubscription();
 
