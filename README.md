@@ -50,3 +50,14 @@ https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API
 * [Vibration API](https://googlechrome.github.io/samples/vibration/)
 
 ## 
+
+## Проверки
+
+Node.js 24: `npm ci --ignore-scripts && npm test`.
+Для браузерных проверок: `npx playwright install chromium webkit && npm run test:browser`.
+Playwright используется только для разработки; у страницы нет runtime-зависимостей.
+Тесты подменяют battery/share/vibration/wake-lock API и блокируют все запросы вне localhost.
+WebKit здесь является симуляцией движка, а не проверкой на устройстве с Safari.
+Реальные разрешения и поведение устройств требуют отдельной ручной проверки.
+`initWakeLock()` возвращает идемпотентную функцию очистки; навигация/возврат
+из back-forward cache освобождают и повторно запрашивают блокировку экрана.
