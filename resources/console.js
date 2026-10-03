@@ -3,5 +3,6 @@ const debugConsole = (...args) => {
     const out = args.reduce((acc, arg) => {
         return acc + " " + arg;
     }, "");
-    document.getElementById("console").innerHTML = document.getElementById("console").innerHTML + "\n" + out;
+    const output = document.getElementById("console");
+    if (output) output.textContent += "\n" + out;
 }
